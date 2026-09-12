@@ -1,5 +1,8 @@
 /*
   Author: @Louis Padillo
+
+  - Week 2 Assignment done
+    - Extra additions (LP): for loop using .map(), included a dedicated go back button
 */
 
 import Image from "next/image";
