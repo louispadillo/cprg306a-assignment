@@ -7,6 +7,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Person from "./person";
 
 // Accounting for the next weekly assignments up to 10.
 const weeks = [2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -26,6 +27,10 @@ export default function Home() {
         </li>
       ))}
       </ul>
+
+      <Person name="Louis" age={25}/>
+      
+      <Person name="Jane" age={27}/>
     </main>
   );
 }
