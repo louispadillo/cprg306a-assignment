@@ -1,1 +1,12 @@
+/* Loads Be Vietnam Pro from Google Fonts. 500 = Medium, 700 = Bold. */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;700&display=swap");
 @import "tailwindcss";
+
+/* Creates a "font-vietnam" Tailwind class that uses this font. */
+@theme {
+    --font-vietnam: "Be Vietnam Pro", sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
