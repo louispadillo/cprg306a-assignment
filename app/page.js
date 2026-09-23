@@ -20,12 +20,12 @@ export default function Home() {
       {/* I had an idea to "automate" the creation of these links not only for easability but for practice*/}
       <ul>
         {weeks.map((week) => ( // essentially a for loop that creates a link for each week in the weeks array
-        <li key={week}>
-          <Link href={`/week-${week}`}>
-            Go to Week {week}
-          </Link>
-        </li>
-      ))}
+          <li key={week}>
+            <Link href={`/week-${week}`}>
+              Go to Week {week}
+            </Link>
+          </li>
+        ))}
       </ul>
 
       <Person name="Louis" age={25}/>
