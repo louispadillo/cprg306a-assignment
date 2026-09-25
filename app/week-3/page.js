@@ -1,23 +1,18 @@
-import GoBack from "../go-back";
+import Link from "next/link";
+import ItemList from "./item-list";
+
+export const metadata = { title: "Shopping List" };
 
 export default function Page() {
-    const dog1 = {
-        name: "Yin Fang",
-        age: 2,
-        breed: "Shitzu",
-        color: "Yellow"
-    }
-    return (
-        <main>
-            <h1 className="text-4xl text-red-500">Week 3 - Components and Props</h1>
-            <h2 className="text-3xl text-blue-600">Dogs Information</h2>
-            <section className="bg-slate-300 w-100">
-                <h2 className="font-bold">{dog1.name}</h2>
-                <p className="ml-4">Age: {dog1.age}</p>
-                <p className="ml-4">Breed: {dog1.breed}</p>
-                <p className="ml-4">Color: {dog1.color}</p>
-            </section>
-            <GoBack />
-        </main>
-    );
+  return (
+    <main className="min-h-screen bg-teal-50 px-6 py-12 dark:bg-slate-950">
+      <div className="mx-auto max-w-4xl">
+        <Link href="/" className="text-sm font-medium text-teal-800 underline hover:text-teal-600 dark:text-teal-300">
+          ← Back to Home
+        </Link>
+        <h1 className="mb-8 mt-6 text-4xl font-bold text-slate-900 dark:text-slate-100">Shopping List</h1>
+        <ItemList />
+      </div>
+    </main>
+  );
 }
