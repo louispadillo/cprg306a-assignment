@@ -1,6 +1,4 @@
-import Item from "./item";
-
-export default function ItemList() {
+export default function Page() {
 
     const items = [
         {
@@ -67,15 +65,28 @@ export default function ItemList() {
 
 
     return (
-        <ul>
-            {items.map((item, index) => (
-                <Item
-                    key={index}
-                    name={item.name}
-                    quantity={item.quantity}
-                    category={item.category}
-                />
-            ))}
-        </ul>
+        <main className="min-h-screen bg-slate-100 p-8">
+
+            <h1 className="text-4xl font-bold text-blue-600 mb-6">
+                Shopping List
+            </h1>
+
+            <ul>
+                {items.map((item, index) => (
+                    <li 
+                        key={index}
+                        className="bg-slate-200 p-4 rounded-lg mb-3"
+                    >
+                        <h2 className="text-xl font-bold">
+                            {item.name}
+                        </h2>
+
+                        <p>Quantity: {item.quantity}</p>
+                        <p>Category: {item.category}</p>
+                    </li>
+                ))}
+            </ul>
+
+        </main>
     );
 }
