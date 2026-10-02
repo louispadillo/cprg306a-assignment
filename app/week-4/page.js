@@ -1,4 +1,4 @@
-import GoBack from "../go-back";
+import GoBackFilled from "../go-back-filled";
 import NewItem from "./new-item";
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
             </h1>
             <div className="flex flex-col items-center">
                 <NewItem />
-                <GoBack />
+                <GoBackFilled />
             </div>
         </main>
     );
