@@ -17,7 +17,7 @@ export default function Home() {
     <main>
       <h1>CPRG 306: Web Development 2 - Assignments</h1>
 
-      {/* I had an idea to "automate" the creation of these links not only for easability but for practice*/}
+      {/* I had an idea to "automate" the creation of these links not only for scalability but for practice*/}
       <ul>
         {weeks.map((week) => ( // essentially a for loop that creates a link for each week in the weeks array
         <li key={week}>
