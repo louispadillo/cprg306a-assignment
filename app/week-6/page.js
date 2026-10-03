@@ -1,11 +1,14 @@
+import SideNavbar from "./side-navbar";
+
 export default function Page() {
     return (
-        <main className="flex flex-row h-screen w-screen bg-red-500">
+        <main className="flex flex-row h-screen w-screen bg-[#F4F6F5]">
 
 
             {/* side navbar */}
-            <div className="flex flex-col h-screen w-[80px] bg-white">
-                
+            <div className="flex flex-col h-screen bg-white">
+                {/* actual side bar */}
+                <SideNavbar />
             </div>
 
 
