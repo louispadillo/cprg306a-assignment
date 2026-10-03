@@ -1,4 +1,6 @@
+import InputOrder from "./input-order";
 import SideNavbar from "./side-navbar";
+import TopNavbar from "./top-navbar";
 
 export default function Page() {
     return (
@@ -6,8 +8,7 @@ export default function Page() {
 
 
             {/* side navbar */}
-            <div className="flex flex-col h-screen bg-white">
-                {/* actual side bar */}
+            <div className="flex flex-col h-screen border-r border-r-[#CCCCCC]">
                 <SideNavbar />
             </div>
 
@@ -17,8 +18,8 @@ export default function Page() {
 
 
                 {/* top navbar */}
-                <div className="flex flex-row h-[80px] w-full bg-blue-500">
-                    <h1>Order Dashboard</h1>
+                <div className="flex flex-row w-full border-b border-b-[#CCCCCC]">
+                    <TopNavbar />
                 </div>
 
 
@@ -27,13 +28,13 @@ export default function Page() {
 
 
                     {/* input content */}
-                    <div className="flex-1 flex flex-row bg-green-500">
-
+                    <div className="flex-1 flex flex-row border-r border-r-[#CCCCCC]">
+                        <InputOrder />
                     </div>
 
 
                     {/* output content */}
-                    <div className="flex-1 flex flex-col bg-orange-500">
+                    <div className="flex-1 flex flex-col ">
 
                     </div>
                 </div>

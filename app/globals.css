@@ -5,6 +5,17 @@
 /* Creates a "font-vietnam" Tailwind class that uses this font. */
 @theme {
     --font-vietnam: "Be Vietnam Pro", sans-serif;
+
+    /* tailwind applies --font-sans as the default so now Be Vietnam Pro is the default font for the entire app. */
+    --font-sans: "Be Vietnam Pro", sans-serif;
+
+
+    --color-dark-900: #262626;
+    --color-dark-800: #333333;
+    --color-dark-700: #4D4D4D;
+    --color-dark-600: #CCCCCC;
+
+
 }
 
 body {

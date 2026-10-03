@@ -9,41 +9,13 @@ const variants = {
   exit: (dir) => ({ y: dir > 0 ? "-100%" : "100%" }),
 };
 
-export default function NewItem() {
-    const [count, setCount] = useState(1);
-    const [name, setName] = useState("");
-    const [category, setCategory] = useState("Produce");
+export default function QuantityCounter({ count, setCount }) {
     const [direction, setDirection] = useState(1);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let newItem = {count, name, category};
-        console.log(newItem);
-    }
-
-    const handleNameChange = (e) => {
-        let inputName = e.target.value;
-        if (inputName.length > 0) {
-            setName(inputName);
-        }
-    }
-
-    const handleCategoryChange = (e) => {
-        let inputCategory = e.target.value;
-        setCategory(inputCategory.toUpperCase());
-    }
-
-    const handleQuantityChange = (e) => {
-        let inputQuantity = parseInt(e.target.value);
-        if (inputQuantity >= 0) {
-            setCount(inputQuantity);
-        }
-    }    
 
     // add 1
     const increment = () => {
         if (count >= 20) {
-            alert("You have reached the value of the count");
+            alert("You have reached the max value of 20");
         
         } else {
             setDirection(1)
@@ -62,15 +34,12 @@ export default function NewItem() {
     };
 
     return (
-
-
         // Component's main container
-        <div className="bg-white inline-flex flex-col justify-start gap-2 rounded-[36.3px] p-3 shadow-[0_4px_15px_0_rgba(0,0,0,0.25)] ml-6 mt-6">
+        <div className="bg-white inline-flex flex-col justify-start gap-2 rounded-[36.3px] p-3 ring-1 ring-dark-600 ml-6 mt-6">
 
             {/* Container for the counter */}
             <div>
-                <div className="relative overflow-hidden border size-[141px] outline-1 p-2.5 gap-2.5 rounded-[30.58px]
-                ">
+                <div className="relative overflow-hidden w-[300px] h-[138px] p-2.5 gap-2.5 rounded-[30.58px] ring-1 ring-dark-600">
                     <AnimatePresence initial={false} custom={direction}>
                     <motion.p
                         key={count}
@@ -80,7 +49,7 @@ export default function NewItem() {
                         animate="center"
                         exit="exit"
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className=" absolute inset-0 flex justify-center items-center leading-none text-8xl text-black pb-3">
+                        className=" absolute inset-0 flex justify-center items-center leading-none text-8xl text-black pb--1">
                         {count}
                     </motion.p>
                 </AnimatePresence>
