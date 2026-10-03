@@ -35,11 +35,11 @@ export default function QuantityCounter({ count, setCount }) {
 
     return (
         // Component's main container
-        <div className="bg-white inline-flex flex-col justify-start gap-2 rounded-[36.3px] p-3 ring-1 ring-dark-600 ml-6 mt-6">
+        <div className="bg-white inline-flex flex-col justify-start gap-2 rounded-[36.3px] p-3 ring-1 ring-dark-600">
 
             {/* Container for the counter */}
             <div>
-                <div className="relative overflow-hidden w-[300px] h-[138px] p-2.5 gap-2.5 rounded-[30.58px] ring-1 ring-dark-600">
+                <div className="relative overflow-hidden w-[334px] h-[138px] p-2.5 gap-2.5 rounded-[30.58px] ring-1 ring-dark-600">
                     <AnimatePresence initial={false} custom={direction}>
                     <motion.p
                         key={count}

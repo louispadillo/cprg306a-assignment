@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import QuantityCounter from "./quantity-counter";
+import { CaretDownIcon } from "@phosphor-icons/react";
+import CategoryDropdown from "./category-dropdown";
 
 export default function InputOrder() {
     const [count, setCount] = useState(1);
@@ -15,14 +17,7 @@ export default function InputOrder() {
 
     const handleNameChange = (e) => {
         let inputName = e.target.value;
-        if (inputName.length > 0) {
-            setName(inputName);
-        }
-    }
-
-    const handleCategoryChange = (e) => {
-        let inputCategory = e.target.value;
-        setCategory(inputCategory.toUpperCase());
+        setName(inputName);
     }
 
     const handleQuantityChange = (e) => {
@@ -33,9 +28,11 @@ export default function InputOrder() {
     } 
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <div className="pl-[64px] pt-[32px]">
+            <form onSubmit={handleSubmit} className="flex flex-row gap-6">
+
+                {/* Groups the name and category fields in the left column*/}
+                <div className="flex flex-col gap-6">
 
                     {/* Item Name Field */}
                     <div className="flex flex-col gap-1">
@@ -46,36 +43,51 @@ export default function InputOrder() {
                             placeholder="Enter item name"
                             value={name}
                             onChange={(e) => handleNameChange(e)}
-                            className="border border-dark-600 rounded-full p-[16px] text-[16px] text-dark-900 tracking-[-5%] w-[400px] h-[54px]"
+                            className="border border-dark-600 rounded-full p-[16px] text-[16px] text-dark-900 tracking-[-0.05em] w-[400px] h-[54px] bg-white"
                         />
                     </div>
 
                     {/* Item Category Field */}
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="category" className="text-[20px] text-dark-900 tracking-[-5%] font-semibold">Category</label>
-                        <input
-                            type="text"
-                            id="category"
-                            placeholder="Enter item category"
-                            value={category}
-                            onChange={(e) => handleCategoryChange(e)}
-                            className="border border-dark-600 rounded-full p-[16px] text-[16px] text-dark-900 tracking-[-5%] w-[400px] h-[54px]"
-                        />
+                        <label htmlFor="category" className="text-[20px] text-dark-900 tracking-[-0.05em] font-semibold">Category</label>
+                        <CategoryDropdown value={category} onChange={setCategory} />
                     </div>
 
-                    <label htmlFor="quantity" className="text-[20px] text-dark-900 tracking-[-5%] font-semibold">Quantity</label>
-                    <QuantityCounter count={count} setCount={setCount} />
                 </div>
-                <button type="submit">Submit</button>
+
+                {/* Quantity Counter + Order details /w submit in the right column */}
+                <div className="flex flex-col gap-6">
+
+                    {/* Item Quantity Field */}
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="quantity" className="text-[20px] text-dark-900 tracking-[-0.05em] font-semibold">Quantity</label>
+                        <QuantityCounter count={count} setCount={setCount} />
+                    </div>
+
+                    {/* Order Details + Submit button */}
+                    <div>
+                        <h2>Order Details</h2>
+
+                        <div>
+                            <div>
+                                <p>name</p>
+                                <p>{name}</p>
+                            </div>
+                            <div>
+                                <p>category</p>
+                                <p>{category}</p>
+                            </div>
+                            <div>
+                                <p>quantity</p>
+                                <p>{count}</p>
+                            </div>
+                        </div>
+
+                        <button type="submit">Submit</button>
+                    </div>
+
+                </div>
             </form>
-            <div>
-                {name.length === 10 && (
-                    <p>Name must be exactly 10 characters or less</p>
-                )}
-                {name.length > 0 && <p>Name {name}</p>}
-                {category.length > 0 && <p>Category {category}</p>}
-                {count > 0 && <p>Quantity {count}</p>}
-            </div>
         </div>
     );
 }
