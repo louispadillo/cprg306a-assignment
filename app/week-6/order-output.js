@@ -7,8 +7,8 @@ const timeOfOrder = date
     return (
         <div className="flex flex-col bg-white border border-dark-600 rounded-[12px] p-4 gap-6">
             <div className="flex flex-row justify-between">
-                <p className="text-[16px] tracking-tighter font-semibold text-dark-900">{dateOfOrder}</p>
-                <p className="text-[16px] tracking-tighter font-semibold text-dark-900">{timeOfOrder}</p>
+                <p className="text-[16px] tracking-tighter font-semibold text-dark-700">{dateOfOrder}</p>
+                <p className="text-[16px] tracking-tighter font-semibold text-dark-700">{timeOfOrder}</p>
             </div>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col gap-1">

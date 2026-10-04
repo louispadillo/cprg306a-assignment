@@ -85,7 +85,11 @@ export default function InputOrder({ addOrder }) {
                             </div>
                         </div>
 
-                        <button type="submit" className={name === "" ? "bg-dark-700 text-dark-600 rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium" : "bg-dark-900 text-white rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium hover:bg-[#1CAE3C] enabled:active:scale-95 transition-transform"}>
+                        <button 
+                            type="submit" 
+                            disabled={name.trim() === "" } 
+                            className={name.trim() === "" ? "bg-dark-700 text-dark-600 rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium" : "bg-dark-900 text-white rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium hover:bg-[#1CAE3C] enabled:active:scale-95 transition-transform"}
+                        >
                             Submit
                         </button>
                     </div>
