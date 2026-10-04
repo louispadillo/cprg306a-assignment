@@ -35,11 +35,11 @@ export default function QuantityCounter({ count, setCount }) {
 
     return (
         // Component's main container
-        <div className="bg-white inline-flex flex-col justify-start gap-2 rounded-[36.3px] p-3 ring-1 ring-dark-600">
+        <div className="bg-white inline-flex flex-col justify-start gap-3 rounded-[12px] p-4 ring-1 ring-dark-600">
 
             {/* Container for the counter */}
             <div>
-                <div className="relative overflow-hidden w-[334px] h-[138px] p-2.5 gap-2.5 rounded-[30.58px] ring-1 ring-dark-600">
+                <div className="relative overflow-hidden w-full h-[138px] p-2.5 gap-2.5 rounded-[10.8px] ring-1 ring-dark-600">
                     <AnimatePresence initial={false} custom={direction}>
                     <motion.p
                         key={count}
@@ -58,12 +58,12 @@ export default function QuantityCounter({ count, setCount }) {
             
 
             {/* Container for both buttons */}
-            <div className="gap-1 flex self-stretch justify-center items-center">
+            <div className="gap-2 flex self-stretch justify-center items-center">
                 {/* Add button */}
                 <button
                     onClick={increment}
                     disabled={count == 20}
-                    className="flex-1 flex justify-center items-center p-2 bg-[#1CAE3C]  text-white hover:bg-[#0E5B1E] disabled:opacity-50 rounded-[9.68px] rounded-bl-[15.07px] enabled:active:scale-95 transition-transform duration-100">
+                    className="flex-1 flex justify-center items-center p-2 bg-[#1CAE3C]  text-white hover:bg-[#0E5B1E] disabled:opacity-50 rounded-[10.8px] enabled:active:scale-95 transition-transform duration-100">
                     <PlusIcon size={24} />
                 </button>
 
@@ -72,7 +72,7 @@ export default function QuantityCounter({ count, setCount }) {
                 <button
                     onClick={decrement}
                     disabled={count == 1}
-                    className="flex-1 flex justify-center items-center p-2 bg-[#C71C1C] text-white hover:bg-[#670E0E] disabled:opacity-50 rounded-[9.68px] rounded-br-[15.07px] enabled:active:scale-95 transition-transform duration-100">
+                    className="flex-1 flex justify-center items-center p-2 bg-[#C71C1C] text-white hover:bg-[#670E0E] disabled:opacity-50 rounded-[10.8px] enabled:active:scale-95 transition-transform duration-100">
                     <MinusIcon size={24} />
                 </button>
             </div>

@@ -24,7 +24,7 @@ export default function Page() {
 
 
                 {/* input and output container */}
-                <div className="flex-1 flex flex-row">
+                <div className="grid grid-cols-[3fr_1fr] h-screen">
 
 
                     {/* input content */}

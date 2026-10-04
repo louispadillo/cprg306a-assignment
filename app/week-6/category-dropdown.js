@@ -35,7 +35,7 @@ export default function CategoryDropdown({ value, onChange }) {
     };
 
     return (
-        <div ref={ref} className="w-[400px] overflow-hidden rounded-[27px] border border-dark-600 bg-white">
+        <div ref={ref} className="overflow-hidden rounded-[27px] border border-dark-600 bg-white">
             {/* Header — always visible */}
             <button
                 type="button"
