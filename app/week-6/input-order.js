@@ -3,7 +3,7 @@ import { useState } from "react";
 import QuantityCounter from "./quantity-counter";
 import CategoryDropdown from "./category-dropdown";
 
-export default function InputOrder() {
+export default function InputOrder({ addOrder }) {
     const [count, setCount] = useState(1);
     const [name, setName] = useState("");
     const [category, setCategory] = useState("Produce");
@@ -12,19 +12,18 @@ export default function InputOrder() {
         e.preventDefault();
         let newItem = {count, name, category};
         console.log(newItem);
+        addOrder(newItem);
+
+        // reset the form after submit
+        setName("");
+        setCategory("Produce");
+        setCount(1);
     }
 
     const handleNameChange = (e) => {
         let inputName = e.target.value;
         setName(inputName);
     }
-
-    const handleQuantityChange = (e) => {
-        let inputQuantity = parseInt(e.target.value);
-        if (inputQuantity >= 0) {
-            setCount(inputQuantity);
-        }
-    } 
 
     return (
         <div className="w-full px-[64px] pt-[32px]">
@@ -42,7 +41,7 @@ export default function InputOrder() {
                             placeholder="Enter item name"
                             value={name}
                             onChange={(e) => handleNameChange(e)}
-                            className="border border-dark-600 rounded-full p-[16px] text-[16px] text-dark-900 tracking-[-0.05em] h-[54px] bg-white"
+                            className="border border-dark-600 rounded-full p-[16px] text-[16px] text-dark-900 tracking-[-0.05em] h-[54px] bg-white focus:outline-hidden"
                         />
                     </div>
 
@@ -86,7 +85,9 @@ export default function InputOrder() {
                             </div>
                         </div>
 
-                        <button type="submit" className="bg-dark-900 text-white rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium">Submit</button>
+                        <button type="submit" className={name === "" ? "bg-dark-700 text-dark-600 rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium" : "bg-dark-900 text-white rounded-[10.8px] p-3 text-[20px] tracking-tighter font-medium hover:bg-[#1CAE3C] enabled:active:scale-95 transition-transform"}>
+                            Submit
+                        </button>
                     </div>
 
                 </div>

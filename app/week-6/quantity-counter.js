@@ -61,6 +61,7 @@ export default function QuantityCounter({ count, setCount }) {
             <div className="gap-2 flex self-stretch justify-center items-center">
                 {/* Add button */}
                 <button
+                    type="button"
                     onClick={increment}
                     disabled={count == 20}
                     className="flex-1 flex justify-center items-center p-2 bg-[#1CAE3C]  text-white hover:bg-[#0E5B1E] disabled:opacity-50 rounded-[10.8px] enabled:active:scale-95 transition-transform duration-100">
@@ -70,6 +71,7 @@ export default function QuantityCounter({ count, setCount }) {
 
                 {/* Minus button */}
                 <button
+                    type="button"
                     onClick={decrement}
                     disabled={count == 1}
                     className="flex-1 flex justify-center items-center p-2 bg-[#C71C1C] text-white hover:bg-[#670E0E] disabled:opacity-50 rounded-[10.8px] enabled:active:scale-95 transition-transform duration-100">
