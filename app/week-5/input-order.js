@@ -3,21 +3,31 @@ import { useState } from "react";
 import QuantityCounter from "./quantity-counter";
 import CategoryDropdown from "./category-dropdown";
 
+/*
+PURPOSE:
+
+This is the right-panel that consists of three inputs:
+1. Naming of an item
+2. Selecting a category (w/ dropdown) for the item
+3. Setting a quantity amount for the item
+
+*/
+
 export default function InputOrder({ addOrder }) {
-    const [count, setCount] = useState(1);
+    const [quantity, setQuantity] = useState(1);
     const [name, setName] = useState("");
     const [category, setCategory] = useState("Produce");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let newItem = {count, name, category};
+        let newItem = {quantity, name, category};
         console.log(newItem);
         addOrder(newItem);
 
         // reset the form after submit
         setName("");
         setCategory("Produce");
-        setCount(1);
+        setQuantity(1);
     }
 
     const handleNameChange = (e) => {
@@ -59,7 +69,7 @@ export default function InputOrder({ addOrder }) {
                     {/* Item Quantity Increase/Decrease Field */}
                     <div className="flex flex-col gap-1">
                         <label htmlFor="quantity" className="text-[20px] text-dark-900 tracking-tighter font-semibold">Quantity</label>
-                        <QuantityCounter count={count} setCount={setCount} />
+                        <QuantityCounter quantity={quantity} setQuantity={setQuantity} />
                     </div>
 
                     {/* Order Details + Submit button */}
@@ -81,7 +91,7 @@ export default function InputOrder({ addOrder }) {
                             </div>
                             <div className="flex flex-col gap-3">
                                 <p className="text-dark-700 text-[14px] tracking-tighter font-semibold">quantity</p>
-                                <p className="text-dark-800 leading-0 tracking-tighter font-medium text-[16px]">{count}</p>
+                                <p className="text-dark-800 leading-0 tracking-tighter font-medium text-[16px]">{quantity}</p>
                             </div>
                         </div>
 

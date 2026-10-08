@@ -1,4 +1,4 @@
-export default function OrderOutput({ name, category, count, date }) {
+export default function OrderOutput({ name, category, quantity, date }) {
 const dateOfOrder = date.toLocaleDateString("en-US", { month: "long", day: "numeric"});
 const timeOfOrder = date
     .toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit"})
@@ -21,7 +21,7 @@ const timeOfOrder = date
                 </div>
                 <div className="flex flex-col gap-1">
                     <p className="text-[14px] font-semibold tracking-tighter text-dark-700">quantity</p>
-                    <p className="text-[16px] tracking-tighter font-semibold text-dark-800">{count}</p>
+                    <p className="text-[16px] tracking-tighter font-semibold text-dark-800">{quantity}</p>
                 </div>
             </div>
         </div>
