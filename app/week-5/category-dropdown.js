@@ -58,7 +58,7 @@ export default function CategoryDropdown({ value, onChange }) {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
                 >
-                    <div className="flex flex-col gap-3 px-4 pb-4">
+                    <div className="flex flex-col gap-1 px-4 pb-4">
                     {groups.map((group) => (
                         <div key={group.name} className={`rounded-2xl px-3 py-3 ${group.bg}`}>
                         <p className={`mb-1 text-[14px] font-bold ${group.text}`}>{group.name}</p>

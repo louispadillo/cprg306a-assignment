@@ -53,7 +53,7 @@ export default function Page() {
                             <h2 className="text-[20px] font-semibold tracking-tighter text-dark-900">Recent Orders</h2>
                             <ClearOrders clearOrders={clearOrders} disabled={orders.length === 0}/>
                         </div>
-                        <div className="overflow-y-auto flex flex-col flex-1 gap-6 px-[64px] scrollbar-thin scrollbar-thumb-dark-700">
+                        <div className="overflow-y-auto flex flex-col flex-1 gap-3 px-[64px] scrollbar-thin scrollbar-thumb-dark-700">
                             {orders.map((order, index) => (
                             <OrderOutput 
                                 key={index}
