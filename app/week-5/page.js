@@ -59,7 +59,7 @@ export default function Page() {
                                 key={index}
                                 name={order.name}
                                 category={order.category}
-                                count={order.quantity}
+                                quantity={order.quantity}
                                 date={order.date}
                             />
                         ))}

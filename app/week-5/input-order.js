@@ -82,16 +82,16 @@ export default function InputOrder({ addOrder }) {
                                 {name === "" ? (
                                     <p className="text-dark-600 leading-0 tracking-tighter font-medium text-[16px]">No name entered</p>
                                 ) : (
-                                    <p className="text-dark-800 leading-0 tracking-tighter font-medium text-[16px]">{name}</p>
+                                    <p className="text-dark-800 leading-0 tracking-tighter font-semibold text-[16px]">{name}</p>
                                 )}
                             </div>
                             <div className="flex flex-col gap-3">
                                 <p className="text-dark-700 text-[14px] tracking-tighter font-semibold">category</p>
-                                <p className="text-dark-800 leading-0 tracking-tighter font-medium text-[16px]">{category}</p>
+                                <p className="text-dark-800 leading-0 tracking-tighter font-semibold text-[16px]">{category}</p>
                             </div>
                             <div className="flex flex-col gap-3">
                                 <p className="text-dark-700 text-[14px] tracking-tighter font-semibold">quantity</p>
-                                <p className="text-dark-800 leading-0 tracking-tighter font-medium text-[16px]">{quantity}</p>
+                                <p className="text-dark-800 leading-0 tracking-tighter font-semibold text-[16px]">{quantity}</p>
                             </div>
                         </div>
 

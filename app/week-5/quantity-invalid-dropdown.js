@@ -12,7 +12,7 @@ export default function QuantityInvalidDropdown({ warning }) {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -40, opacity: 0 }}
                         transition={{ type: "spring", stiffness: 800, damping: 30}}
-                        className="flex flex-row bg-[#F4F6F5] rounded-full gap-2 text-[#C71C1C] font-semibold text-[16px] tracking-tighter p-4 shadow-md"
+                        className="flex flex-row bg-[#F7F8F8] rounded-full gap-2 text-[#C71C1C] font-semibold text-[16px] tracking-tighter p-4 shadow-md"
                     >
                         <WarningIcon size={24} weight="fill" color="#C71C1C"/>
                         Your item quantity can't {warning === "min" ? "go below 1" : "be above 20"}!

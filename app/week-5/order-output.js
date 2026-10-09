@@ -12,7 +12,7 @@ const timeOfOrder = date
             </div>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col gap-1">
-                    <p className="text-[14px] font-medium tracking-tighter text-dark-700">name</p>
+                    <p className="text-[14px] font-semibold tracking-tighter text-dark-700">name</p>
                     <p className="text-[16px] tracking-tighter font-semibold text-dark-800">{name}</p>
                 </div>
                 <div className="flex flex-col gap-1">

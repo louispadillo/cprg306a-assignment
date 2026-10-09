@@ -72,8 +72,9 @@ export default function QuantityCounter({ quantity, setQuantity }) {
                 <button
                     type="button"
                     onClick={increment}
-                    disabled={quantity == 21}
-                    className="flex-1 flex justify-center items-center p-2 bg-[#1CAE3C]  text-white hover:bg-[#0E5B1E] disabled:opacity-50 rounded-[10.8px] enabled:active:scale-95 transition-transform duration-100">
+                    className={`flex-1 flex justify-center items-center p-2 bg-[#1CAE3C] text-white rounded-[10.8px] 
+                        ${quantity === 20 ? "opacity-50" : "hover:bg-[#0E5B1E] active:scale-95 transition-transform duration-100"}`  
+                    }>
                     <PlusIcon size={24} />
                 </button>
 
@@ -82,8 +83,9 @@ export default function QuantityCounter({ quantity, setQuantity }) {
                 <button
                     type="button"
                     onClick={decrement}
-                    disabled={quantity == 0}
-                    className="flex-1 flex justify-center items-center p-2 bg-[#C71C1C] text-white hover:bg-[#670E0E] disabled:opacity-50 rounded-[10.8px] enabled:active:scale-95 transition-transform duration-100">
+                    className={`flex-1 flex justify-center items-center p-2 bg-[#C71C1C] text-white rounded-[10.8px]
+                        ${quantity === 1 ? "opacity-50" : "hover:bg-[#670E0E] active:scale-95 transition-transform duration-100"}
+                    `}>
                     <MinusIcon size={24} />
                 </button>
             </div>
