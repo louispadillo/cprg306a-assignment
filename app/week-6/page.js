@@ -11,7 +11,7 @@ export default function Page() {
         <main className="pb-6">
             <h1 className="text-center text-[40px] tracking-tighter font-bold p-10 text-dark-900">Shopping List</h1>
             <div className="flex flex-col justify-center items-center">
-                <ItemsList setSortBy={setSortBy}/>
+                <ItemsList sortBy={sortBy} setSortBy={setSortBy}/>
                 <Items sortBy={sortBy}/>
                 <GoBackFilled />
             </div>
