@@ -20,25 +20,25 @@ export default function Items({sortBy}){
 
     // return list if sortBy is group
     if (sortBy === "group") {
-        // this returns the whole list container
-        return (
-            <ul className="gap-2 flex flex-col">
-                {sortedItems.map((item, index) => {
-                    const isNewCategory = index === 0 || item.category !== sortedItems[index - 1].category;
+        const categories = [...new Set(sortedItems.map((item) => item.category))];
 
-                    // this return each item inside the container
-                    return (
-                        <div key={item.id} className="flex flex-col gap-2">
-                            {isNewCategory && (
-                                <h2 className="text-xl font-bold tracking-tighter text-dark-900 capitalize pt-4">
-                                    {item.category}
-                                </h2>
-                            )}
-                            <ItemCard item={item} />
-                        </div>
-                    );
-                })}
-            </ul>
+        return (    
+            <div className="flex flex-col gap-4">
+                {categories.map((category) =>  (
+                    <div key={category} className="flex flex-col gap-2 p-2 bg-dark-600 rounded-4xl">
+                        <h2 className="text-xl font-bold tracking-tighter text-dark-900 capitalize py-2 pl-3">
+                            {category}
+                        </h2>
+                        <ul className="gap-1 flex flex-col">
+                            {sortedItems
+                                .filter((item) => item.category === category)
+                                .map((item) => (
+                                    <ItemCard key={item.id} item={item} />
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         );
     }
 
