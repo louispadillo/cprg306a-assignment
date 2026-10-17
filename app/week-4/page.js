@@ -1,16 +1,17 @@
-import GoBackFilled from "../go-back-filled";
+import Link from "next/link";
 import NewItem from "./new-item";
 
 export default function Page() {
-    return (
-        <main>
-            <h1 className="font-bold text-[24px] text-black tracking-[-0.64px] pt-6 pl-6">
-                Quantity Counter
-            </h1>
-            <div className="flex flex-col items-center">
-                <NewItem />
-                <GoBackFilled />
-            </div>
-        </main>
-    );
+  return (
+    <main className="min-h-screen bg-gray-100">
+      <Link
+        href="/"
+        className="absolute left-4 top-4 rounded bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-blue-600"
+      >
+        Home
+      </Link>
+
+      <NewItem />
+    </main>
+  );
 }
