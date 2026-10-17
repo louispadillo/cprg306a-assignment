@@ -8,19 +8,19 @@ export default function ItemList() {
 
     const [sortBy, setSortBy] = useState("name");
 
+    let sortedItems = [...items];
 
-    const sortedItems = [...items].sort((a, b) => {
+    if (sortBy === "name") {
+        sortedItems.sort((a, b) => 
+            a.name.localeCompare(b.name)
+        );
+    }
 
-        if (sortBy === "name") {
-            return a.name.localeCompare(b.name);
-        }
-
-        if (sortBy === "category") {
-            return a.category.localeCompare(b.category);
-        }
-
-        return 0;
-    });
+    if (sortBy === "category") {
+        sortedItems.sort((a, b) => 
+            a.category.localeCompare(b.category)
+        );
+    }
 
 
     return (
@@ -28,6 +28,11 @@ export default function ItemList() {
 
             <button
                 onClick={() => setSortBy("name")}
+                style={{
+                    marginRight: "10px",
+                    padding: "8px",
+                    backgroundColor: sortBy === "name" ? "lightblue" : "lightgray"
+                }}
             >
                 Sort by Name
             </button>
@@ -35,6 +40,10 @@ export default function ItemList() {
 
             <button
                 onClick={() => setSortBy("category")}
+                style={{
+                    padding: "8px",
+                    backgroundColor: sortBy === "category" ? "lightblue" : "lightgray"
+                }}
             >
                 Sort by Category
             </button>
