@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ItemsList from "./items-list.js";
 import Items from "./items.js";
-import GoBack from "../go-back.js";
+import GoBackFilled from "../go-back-filled.js";
 
 export default function Page() {
     const[sortBy, setSortBy] = useState("name");
@@ -13,7 +13,7 @@ export default function Page() {
             <div className="flex flex-col justify-center items-center">
                 <ItemsList setSortBy={setSortBy}/>
                 <Items sortBy={sortBy}/>
-                <GoBack />
+                <GoBackFilled />
             </div>
         </main>
     );
