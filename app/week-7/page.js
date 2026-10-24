@@ -5,8 +5,11 @@ import OrderOutput from "./order-output";
 import SideNavbar from "./side-navbar";
 import TopNavbar from "./top-navbar";
 import { useState } from "react";
+import Items from "./items";
+import ItemsList from "./items-list";
 
 export default function Page() {
+    const[sortBy, setSortBy] = useState("name");
     const [orders, setOrders] = useState([]);
 
     const addOrder = (newItem) => {
@@ -49,11 +52,15 @@ export default function Page() {
 
                     {/* output content */}
                     <div className="flex-1 flex flex-col py-[32px] gap-6 min-h-0">
-                        <div className="flex flex-row justify-between px-[64px]">
-                            <h2 className="text-[20px] font-semibold tracking-tighter text-dark-900">Recent Orders</h2>
-                            <ClearOrders clearOrders={clearOrders} disabled={orders.length === 0}/>
+                        <div className="flex flex-col">
+                            <div className="flex flex-row justify-between px-[64px]">
+                                <h2 className="text-[20px] font-semibold tracking-tighter text-dark-900">Recent Orders</h2>
+                                <ClearOrders clearOrders={clearOrders} disabled={orders.length === 0}/>
+                            </div>
+                            <ItemsList setSortBy={setSortBy}/>
                         </div>
                         <div className="overflow-y-auto flex flex-col flex-1 gap-3 px-[64px] scrollbar-thin scrollbar-thumb-dark-700">
+                            <Items sortBy={sortBy}/>
                             {orders.map((order, index) => (
                             <OrderOutput 
                                 key={index}
@@ -62,7 +69,7 @@ export default function Page() {
                                 quantity={order.quantity}
                                 date={order.date}
                             />
-                        ))}
+                            ))}
                         </div>
                     </div>
                 </div>
