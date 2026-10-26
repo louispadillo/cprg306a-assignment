@@ -12,23 +12,11 @@ function ItemCard({ item }) {
 }
 
 export default function Items({sortBy}){
-
-    const dataWithIndex = items.map((item, index) => ({
-        ...item,
-        originalIndex: index
-    }));
     
-    // return a sorted list
-    const sortedItems = [...dataWithIndex].sort((a,b) => {
+    //
+    const sortedItems = [...items].sort((a,b) =>
         sortBy === "name" ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category)
-        if (sortBy === "name") {
-            return a.name.localeCompare(b.name)
-        } else if (sortBy === "category") {
-            return a.category.localeCompare(b.category)
-        } else if (sortBy === "recent") {
-            return a.originalIndex - b.originalIndex
-        }
-    });
+    );
 
     // return list if sortBy is group
     if (sortBy === "group") {
