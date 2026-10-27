@@ -1,5 +1,4 @@
 "use client";
-import items from "./items.json";
 
 function ItemCard({ item }) {
   return (
@@ -11,30 +10,21 @@ function ItemCard({ item }) {
   );
 }
 
-export default function Items({sortBy}){
+export default function Items({ items, sortBy }){
 
-    const dataWithIndex = items.map((item, index) => ({
-        ...item,
-        originalIndex: index
-    }));
-    
-    // return a sorted list
-    const sortedItems = [...dataWithIndex].sort((a,b) => {
-        sortBy === "name" ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category)
+    // sort a copy of the items prop so the original is never changed
+    const sortedItems = [...items].sort((a,b) => {
         if (sortBy === "name") {
             return a.name.localeCompare(b.name)
-        } else if (sortBy === "category") {
-            return a.category.localeCompare(b.category)
-        } else if (sortBy === "recent") {
-            return a.originalIndex - b.originalIndex
         }
+        return a.category.localeCompare(b.category)
     });
 
     // return list if sortBy is group
     if (sortBy === "group") {
         const categories = [...new Set(sortedItems.map((item) => item.category))];
 
-        return (    
+        return (
             <div className="flex flex-col gap-4">
                 {categories.map((category) =>  (
                     <div key={category} className="flex flex-col gap-2 p-2 bg-dark-600 rounded-4xl">
