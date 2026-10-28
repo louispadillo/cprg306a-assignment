@@ -73,8 +73,8 @@ export default function QuantityCounter({ quantity, setQuantity }) {
                     type="button"
                     onClick={increment}
                     className={`flex-1 flex justify-center items-center p-2 bg-[#1CAE3C] text-white rounded-[10.8px] 
-                        ${quantity === 20 ? "opacity-50" : "hover:bg-[#0E5B1E] active:scale-95 transition-transform duration-100"}`  
-                    }>
+                        ${quantity === 20 ? "opacity-50" : "hover:bg-[#0E5B1E] active:scale-95 transition-transform duration-100"}`}  
+                    >
                     <PlusIcon size={24} />
                 </button>
 
