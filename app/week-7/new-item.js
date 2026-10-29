@@ -25,13 +25,27 @@ export default function NewItem({ onAddItem }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "15px",
+      }}
+    >
       <input
         type="text"
-        placeholder="Item Name"
+        placeholder="Enter item name..."
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
+        style={{
+          padding: "15px 20px",
+          fontSize: "18px",
+          borderRadius: "25px",
+          border: "2px solid #ddd",
+          backgroundColor: "#fafafa",
+        }}
       />
 
       <input
@@ -40,25 +54,53 @@ export default function NewItem({ onAddItem }) {
         max="20"
         value={quantity}
         onChange={(e) => setQuantity(Number(e.target.value))}
+        style={{
+          padding: "15px 20px",
+          fontSize: "18px",
+          borderRadius: "25px",
+          border: "2px solid #ddd",
+          backgroundColor: "#fafafa",
+        }}
       />
 
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
+        style={{
+          padding: "15px 20px",
+          fontSize: "18px",
+          borderRadius: "25px",
+          border: "2px solid #ddd",
+          backgroundColor: "#fafafa",
+        }}
       >
-        <option value="produce">Produce</option>
-        <option value="dairy">Dairy</option>
-        <option value="bakery">Bakery</option>
-        <option value="meat">Meat</option>
-        <option value="frozen">Frozen Foods</option>
-        <option value="canned">Canned Goods</option>
-        <option value="dry">Dry Goods</option>
-        <option value="beverages">Beverages</option>
-        <option value="household">Household</option>
-        <option value="other">Other</option>
+        <option value="produce">🥬 Produce</option>
+        <option value="dairy">🥛 Dairy</option>
+        <option value="bakery">🍞 Bakery</option>
+        <option value="meat">🥩 Meat</option>
+        <option value="frozen">❄️ Frozen Foods</option>
+        <option value="canned goods">🥫 Canned Goods</option>
+        <option value="dry goods">🍚 Dry Goods</option>
+        <option value="beverages">🥤 Beverages</option>
+        <option value="household">🏠 Household</option>
+        <option value="other">📦 Other</option>
       </select>
 
-      <button type="submit">Add Item</button>
+      <button
+        type="submit"
+        style={{
+          padding: "15px",
+          fontSize: "20px",
+          fontWeight: "bold",
+          borderRadius: "25px",
+          border: "none",
+          backgroundColor: "#4CAF50",
+          color: "white",
+          cursor: "pointer",
+        }}
+      >
+        Add Item
+      </button>
     </form>
   );
 }
