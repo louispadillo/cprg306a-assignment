@@ -29,7 +29,7 @@ export default function ItemList() {
       return acc;
     }, {});
   const sortedCategories = Object.keys(groupedItems).sort((a, b) =>
-    a.localeCompare(b)
+    a.localeCompare(b),
   );
 
   const activeClass = "bg-blue-500 text-white";
@@ -38,7 +38,9 @@ export default function ItemList() {
   return (
     <div>
       <div className="mb-6 flex items-center gap-2">
-        <span className="text-sm text-slate-600 dark:text-slate-300">Sort by:</span>
+        <span className="text-sm text-slate-600 dark:text-slate-300">
+          Sort by:
+        </span>
         <button
           onClick={() => setSortBy("name")}
           className={`rounded px-4 py-2 text-sm font-medium ${
