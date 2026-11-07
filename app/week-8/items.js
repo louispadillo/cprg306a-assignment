@@ -1,8 +1,8 @@
 "use client";
 
-function ItemCard({ item }) {
+function ItemCard({ item, onSelect }) {
   return (
-    <li className="flex flex-col border border-dark-600 w-[500px] rounded-3xl p-4 text-dark-900 bg-white">
+    <li onClick={() => onSelect(item)} className="flex flex-col border border-dark-600 w-[500px] rounded-3xl p-4 text-dark-900 bg-white cursor-pointer hover:border-blue-500">
       <p className="bg-dark-600 flex flex-row rounded-full px-3 py-1 text-[12px] w-fit">{item.category}</p>
       <h3 className="text-2xl font-semibold tracking-tighter pb-4 pt-1">{item.name}</h3>
       <p className="tracking-tighter text-dark-700">Quantity: {item.quantity}</p>
@@ -10,7 +10,7 @@ function ItemCard({ item }) {
   );
 }
 
-export default function Items({ items, sortBy }){
+export default function Items({ items, sortBy, onItemSelect }){
 
     // sort a copy of the items prop so the original is never changed
     const sortedItems = [...items].sort((a,b) => {
@@ -35,7 +35,7 @@ export default function Items({ items, sortBy }){
                             {sortedItems
                                 .filter((item) => item.category === category)
                                 .map((item) => (
-                                    <ItemCard key={item.id} item={item} />
+                                    <ItemCard key={item.id} item={item} onSelect={onItemSelect} />
                             ))}
                         </ul>
                     </div>
@@ -48,7 +48,7 @@ export default function Items({ items, sortBy }){
     return(
         <ul className="gap-2 flex flex-col">
             {sortedItems.map((item) =>
-                <ItemCard key={item.id} item={item} />
+                <ItemCard key={item.id} item={item} onSelect={onItemSelect} />
             )}
         </ul>
     );
